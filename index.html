@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapty || Map your workouts</title>
+    <link rel="shortcut icon" type="image/png" href="./img/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- leaflet links -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="mapty-container">
+      <div class="workouts">
+        <img src="./img/mapty_logo.png" alt="" />
+
+        <!-- Workout form -->
+        <form class="hidden" action="" novalidate autocomplete="off">
+          <div class="workout-form">
+            <label for="">Workout Type</label>
+            <select id="workouts-form-type">
+              <option value="running">🏃 Running</option>
+              <option value="cycling">🚴 Cycling</option>
+            </select>
+          </div>
+          <div class="workout-form">
+            <label for="">Distance</label>
+            <input type="number" id="distance" placeholder="in km " />
+          </div>
+          <div class="workout-form">
+            <label for="">Duration</label>
+            <input type="number" id="duration" placeholder="in min" />
+          </div>
+
+          <!-- cadence number of steps per min while running-->
+          <!-- Elevation gain total number of feet you climb-->
+
+          <div class="workout-form">
+            <label for="" id="toggleCadence">Cadence</label>
+            <input type="number" id="cadence" placeholder="step/min" />
+          </div>
+          <div class="workout-form">
+            <label for="">When</label>
+            <input type="date" id="date" />
+          </div>
+          <div class="workout-form">
+            <button class="btn-add btn">Add Workout</button>
+            <button class="btn-close btn">Close</button>
+          </div>
+          
+
+          <!-- err Msg for input fields -->
+          <div class="errMsg opacity">
+            <ul>
+              <li>😉 Input should not be empty</li>
+              <li>😌 Input only accepts number</li>
+            </ul>
+            <span>ok</span>
+          </div>
+        </form>
+
+        <!-- Workout list  -->
+        <div class="workout-list">
+          <div class="workout-heading">
+            <p>List of Your Workouts</p>
+            <button class="btn" title="delete all ☹️">Clear All</button>
+          </div>
+          <div class="workout-items">
+            <!-- Sample static workouts -->
+
+            <!-- <div class="workout-item">
+            <div class="workout-title running">
+              <p>Running on August 14</p>
+              <span>❌</span>
+            </div>
+            <ul>
+              <li>
+                <span>🛣️ 6km</span>
+              </li>
+              <li>
+                <span>⏱️ 6min</span>
+              </li>
+              <li>
+                <span>⚡️ 6min/km</span>
+              </li>
+              <li>
+                <span>🏃 5spm</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="workout-item">
+            <div class="workout-title cycling">
+              <p>Cycling on August 14</p>
+              <span>❌</span>
+            </div>
+            <ul>
+              <li>
+                <span>🛣️ 6km</span>
+              </li>
+              <li>
+                <span>⏱️ 6min</span>
+              </li>
+              <li>
+                <span>⚡️ 6km/h</span>
+              </li>
+              <li>
+                <span>🚵 5m</span>
+              </li>
+            </ul>
+          </div> -->
+          </div>
+          <div class="emptyMsg">
+            <p>🫤 Seems you don't have any workouts Add new Workout Now 👉</p>
+          </div>
+        </div>
+
+        <!-- Landing Page -->
+        <div class="welcome-container">
+          <div class="workout-type">
+            <p>🏃 Running</p>
+            <span>OR</span>
+            <p>🚵 Cycling</p>
+          </div>
+          <p class="mapty"><span>Mapty</span> is your perfect partner</p>
+          <span class="click-map"
+            >Click the map to add your <span>workouts</span> 👉</span
+          >
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div id="map"></div>
+    </div>
+  </body>
+</html>
