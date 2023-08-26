@@ -1,4 +1,5 @@
 # Project_Mapty
+
 ## Summary
 
 Mapty is an application where user can  input their workouts by using real world map, like where he going to start running or cycling, how many  km, minutes and more.

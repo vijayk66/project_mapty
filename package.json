@@ -1,11 +1,21 @@
 {
   "name": "mapty",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mapty is an application where user can  input their workouts by using real world map, like where he going to start running or cycling, how many  km, minutes and more.",
   "scripts": {
     "start": "parcel index.html",
-    "build" : "parcel build index.html"
+    "build": "parcel build index.html"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijayk66/project_mapty.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/vijayk66/project_mapty/issues"
+  },
+  "homepage": "https://github.com/vijayk66/project_mapty#readme"
 }
